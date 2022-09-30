@@ -38,8 +38,10 @@ function checkGuess (){
     let out = document.getElementById("result")
     if(correct){
         out.innerHTML = "You got it right"
+        correct -= 1
     } else {
         out.innerHTML = "Wrong Musician"
+        wrong -= 1
     }
 }
 </script>
