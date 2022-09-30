@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+ <head>
+    <title>Guessing Musicians</title>
+ </head>
+<body>
+
+<h2>Musician guess by Samuel Gutierrez</h2>
+
+<form>
+    <label for="password1">Enter the secret musician name </label>
+    <input type ="password" id="password1" name="John Lennon" value="John Lennon"> <br>
+
+    <label for="check">Guess the musician </label>
+    <input type ="text" id="check" name="check" autofocus> <br>
+
+    <input type="button" onclick="checkGuess()" value="Check the guess">
+</form>
+
+
+<ul id="result"></ul>
+
+<script> 
+var correct = 0
+var wrong = 0
+
+function checkGuess (){
+    console.log("Getting form values")
+    password = document.getElementById("password1").value
+    guess = document.getElementById("check").value
+    confirmed = confirm("Are these the same values? "+password+" and "+guess)
+    if(password == guess){
+        correct += 1
+    }else{
+        wrong += 1
+    }
+
+    let out = document.getElementById("result")
+    if(correct){
+        out.innerHTML = "You got it right"
+    } else {
+        out.innerHTML = "Wrong Musician"
+    }
+}
+</script>
+
+</body>
+</html> 
