@@ -2,6 +2,9 @@
 <html>
  <head>
     <title>Guessing Musicians</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" 
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
  </head>
 <body>
 
@@ -20,9 +23,15 @@
 
 <ul id="result"></ul>
 
+<div class="container">
+    <img id="image" src="gnat.jpg" alt="gnat" width="100" height="100" onclick="swapImage()">
+</div>
+
 <script> 
 var correct = 0
 var wrong = 0
+
+let useImage = 1
 
 function checkGuess (){
     console.log("Getting form values")
@@ -42,6 +51,25 @@ function checkGuess (){
     } else {
         out.innerHTML = "Wrong Musician"
         wrong -= 1
+    }
+}
+
+function swapImage(){
+    switch(useImage){
+        case 1:
+            document.getElementById('image').src = 'termites.jpg'
+            useImage = 2
+            break;
+        case 2:
+            document.getElementById('image').src = 'icebugs.jpg'
+            useImage = 3
+            break;
+        case 3: 
+            document.getElementById('image').src = 'gnat.jpg'
+            useImage = 1
+            break;
+        default:
+            console.log('Logic got wrong')
     }
 }
 </script>
