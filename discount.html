@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Discounts</title>
+    </head>
+ 
+<body>
+
+<h2>Samuel Gutierrez computes discounts</h2>
+
+<form>
+    <label for="label_amount">Enter base amount</label>
+    <input type ="number" id="base_amount" value=20> <br>
+
+    <label for="label_discount">Enter the discount percentage</label>
+    <input type ="number" id="offer_discount" value="10"> <br>
+
+    <input type="button" onclick="discount()" value="Apply discount">
+</form>
+
+
+<ul id="result"></ul>
+
+<script> 
+
+function discount (){
+    let baseValue=document.getElementById("base_amount").value;
+    let discountValue=document.getElementById("offer_discount").value;
+    out=document.getElementById("result");
+    let result="";
+    let discountedAmount=baseValue-baseValue*discountValue/100;
+    for(i=1;i<=5;i++){
+
+        result=result+discountedAmount*i+" ";
+    }
+    out.innerHTML = "Discounted amounts for base "+baseValue+" are "+result;
+}
+</script>
+
+</body>
+</html> 
